@@ -53,7 +53,7 @@ export default function AudioPlayer() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1 }}
         onClick={togglePlay}
-        className={`fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-3 rounded-full backdrop-blur-md shadow-xl transition-all duration-300 ${
+        className={`fixed bottom-6 right-6 z-[9999] flex items-center gap-3 px-4 py-3 rounded-full backdrop-blur-md shadow-xl transition-all duration-300 pointer-events-auto ${
           isPlaying 
             ? 'bg-white text-brand-blue-dark shadow-[0_4px_15px_rgba(255,255,255,0.4)] hover:bg-gray-100' 
             : 'bg-white/20 border border-white/40 text-white hover:bg-white/40'
