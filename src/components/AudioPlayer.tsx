@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Music } from 'lucide-react';
 import { motion } from 'motion/react';
+import birthdayAudio from '../assets/birthday.mp3';
 
 export default function AudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -12,7 +13,6 @@ export default function AudioPlayer() {
         audioRef.current.pause();
         setIsPlaying(false);
       } else {
-        // Handle the play promise correctly without locking using await which can hang
         const playPromise = audioRef.current.play();
         if (playPromise !== undefined) {
           playPromise
@@ -23,15 +23,12 @@ export default function AudioPlayer() {
               console.error("Audio playback error:", error);
               setIsPlaying(false);
             });
-        } else {
-          setIsPlaying(true);
         }
       }
     }
   };
 
   useEffect(() => {
-    // Clean up audio on unmount
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
@@ -41,10 +38,8 @@ export default function AudioPlayer() {
 
   return (
     <>
-      <audio ref={audioRef} loop>
-        {/* Local file first. Upload your song as "birthday.mp3" into a "public" folder. */}
-        <source src="/birthday.mp3" type="audio/mpeg" />
-        {/* Fallback to the web version if the local file is not found */}
+      <audio ref={audioRef} loop preload="auto">
+        <source src={birthdayAudio} type="audio/mpeg" />
         <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/3/39/Happy_Birthday_To_You_-_piano_version.ogg/Happy_Birthday_To_You_-_piano_version.ogg.mp3" type="audio/mpeg" />
       </audio>
       
@@ -53,7 +48,7 @@ export default function AudioPlayer() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1 }}
         onClick={togglePlay}
-        className={`fixed bottom-6 right-6 z-[9999] flex items-center gap-3 px-4 py-3 rounded-full backdrop-blur-md shadow-xl transition-all duration-300 pointer-events-auto ${
+        className={`fixed bottom-6 right-6 z-[9999] cursor-pointer flex items-center gap-3 px-4 py-3 rounded-full backdrop-blur-md shadow-xl transition-all duration-300 pointer-events-auto ${
           isPlaying 
             ? 'bg-white text-brand-blue-dark shadow-[0_4px_15px_rgba(255,255,255,0.4)] hover:bg-gray-100' 
             : 'bg-white/20 border border-white/40 text-white hover:bg-white/40'

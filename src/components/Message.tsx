@@ -45,7 +45,7 @@ export default function Message() {
         >
           <span className="text-white text-6xl block mb-6 font-script">“</span>
           <p className="font-script text-3xl md:text-4xl leading-relaxed text-white drop-shadow-md">
-            Sixty-six years of wisdom, strength, and boundless love. Thank you for being the steadfast anchor of our family, guiding us with patience and inspiring us with your life's journey. May this coming year bring you health, abundant joy, and all the peace you so deeply deserve.
+            Sixty-six years of wisdom, strength, and boundless love. Thank you for being the steadfast anchor of our family, guiding us with patience and inspiring us with your life's journey. May this coming year bring you health, abundant joy, and all the peace you so deeply deserve. Ai generated mn kaayo ang message
           </p>
           <p className="mt-8 mb-16 text-brand-blue-text font-script font-bold text-4xl drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
             Love, Mark
