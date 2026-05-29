@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@600;700&family=Titan+One&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Dancing Script", cursive;
+  --font-chunky: "Titan One", cursive;
+  --color-brand-blue-light: #70b3ff;
+  --color-brand-blue-bg: #4088eb;
+  --color-brand-blue-dark: #1254a8;
+  --color-brand-blue-text: #0a3570;
+}
+
+body {
+  background-color: var(--color-brand-blue-bg);
+  background-image: radial-gradient(circle at top center, #64a1f4 0%, #2f73d6 100%);
+  background-attachment: fixed;
+  color: white;
+  font-family: var(--font-sans);
+}
+
+.text-3d-bubbly {
+  font-family: var(--font-chunky);
+  background-image: radial-gradient(circle, #2f73d6 2px, transparent 2px);
+  background-size: 10px 10px;
+  background-color: white;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 2px var(--color-brand-blue-dark);
+  filter: drop-shadow(0px 2px 0px var(--color-brand-blue-dark)) 
+          drop-shadow(0px 4px 0px var(--color-brand-blue-dark)) 
+          drop-shadow(0px 6px 0px var(--color-brand-blue-dark)) 
+          drop-shadow(0px 8px 0px var(--color-brand-blue-dark)) 
+          drop-shadow(0px 10px 15px rgba(0,0,0,0.3));
+}
+

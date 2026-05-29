@@ -1,0 +1,6 @@
+{
+  "name": "Happy 66th Birthday, Papa William",
+  "description": "A festive, elegant birthday celebration webpage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
